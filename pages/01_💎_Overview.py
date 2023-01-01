@@ -1,5 +1,6 @@
 import streamlit as st
-from src.data import get_adidas_sales_df
+from src.data import df
+
 
 def display_kpis(data):
     """ """
@@ -15,14 +16,16 @@ def display_kpis(data):
         st.write(f"{round(sum(data['Units Sold']), 2):,}")
 
 
-st.title("Sales Overview")
+def main():
+    st.title("Sales Overview")
 
-df = get_adidas_sales_df()
+    display_kpis(df)
 
-display_kpis(df)
-# st.write(df)
+    st.bar_chart(df, x="Region", y="Total Sales")
+    st.bar_chart(df, x="State", y="Total Sales")
+    st.bar_chart(df, x="City", y="Total Sales")
+    st.bar_chart(df, x="Invoice Date", y="Total Sales")
 
-st.bar_chart(df, x="Region", y="Total Sales")
-st.bar_chart(df, x="State", y="Total Sales")
-st.bar_chart(df, x="City", y="Total Sales")
-st.bar_chart(df, x="Invoice Date", y="Total Sales")
+
+if __name__ == "__main__":
+    main()
