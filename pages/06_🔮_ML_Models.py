@@ -1,6 +1,6 @@
 import streamlit as st
 from src.data import get_adidas_sales_df
-from pycaret.regression import setup, compare_models, pull, save_model
+from pycaret.regression import setup, compare_models, pull
 
 
 df = get_adidas_sales_df()
