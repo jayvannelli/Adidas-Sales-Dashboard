@@ -22,8 +22,14 @@ def main():
     display_kpis(df)
 
     st.bar_chart(df, x="Region", y="Total Sales")
+
+    st.write("---")
+
+    st.subheader("Total Sales Demographics")
     st.bar_chart(df, x="State", y="Total Sales")
     st.bar_chart(df, x="City", y="Total Sales")
+
+    st.subheader("Invoices Over Time")
     st.bar_chart(df, x="Invoice Date", y="Total Sales")
 
 
