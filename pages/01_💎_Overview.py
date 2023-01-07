@@ -1,4 +1,5 @@
 import streamlit as st
+import datetime as dt
 from src.data import df
 
 
@@ -26,6 +27,10 @@ def main():
     st.write("---")
 
     st.subheader("Total Sales Demographics")
+
+    df['Invoice Date Name'] = df['Invoice Date'].dt.day_name()
+    st.bar_chart(df, x="Invoice Date Name", y="Total Sales")
+
     st.bar_chart(df, x="State", y="Total Sales")
     st.bar_chart(df, x="City", y="Total Sales")
 
