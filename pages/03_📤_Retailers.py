@@ -10,8 +10,8 @@ def main():
     retailer_df = df.loc[df['Retailer'] == retailer]
 
     st.subheader(f"{retailer} Demographic Breakdown")
-    df['Invoice Date Name'] = df['Invoice Date'].dt.day_name()
-    st.bar_chart(df, x="Invoice Date Name", y=["Total Sales", "Operating Profit"])
+    retailer_df['Invoice Date Name'] = retailer_df['Invoice Date'].dt.day_name()
+    st.bar_chart(retailer_df, x="Invoice Date Name", y=["Total Sales", "Operating Profit"])
 
     st.subheader(f"{retailer} Total Sales by Method")
     st.bar_chart(retailer_df, x="Sales Method", y="Total Sales")
