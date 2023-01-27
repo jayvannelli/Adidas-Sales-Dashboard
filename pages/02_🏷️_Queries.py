@@ -1,9 +1,11 @@
 import streamlit as st
-from src.data import df
+from src.data import get_adidas_sales_df
 
 
 def main():
     st.title("Query Dataset")
+
+    df = get_adidas_sales_df()
 
     product = st.multiselect("Select product(s):",
                              options=df['Product'].unique(),

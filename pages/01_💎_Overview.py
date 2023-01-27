@@ -1,6 +1,6 @@
 import streamlit as st
 import datetime as dt
-from src.data import df
+from src.data import get_adidas_sales_df
 
 
 def display_kpis(data):
@@ -20,6 +20,7 @@ def display_kpis(data):
 def main():
     st.title("Sales Overview")
 
+    df = get_adidas_sales_df()
     display_kpis(df)
 
     st.bar_chart(df, x="Region", y="Total Sales")

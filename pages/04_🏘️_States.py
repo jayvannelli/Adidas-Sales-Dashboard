@@ -1,9 +1,11 @@
 import streamlit as st
-from src.data import df
+from src.data import get_adidas_sales_df
 
 
 def main():
     st.title("State Breakdown")
+
+    df = get_adidas_sales_df()
 
     state = st.selectbox("Select state:", options=df['State'].unique())
 

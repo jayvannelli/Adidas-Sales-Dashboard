@@ -9,5 +9,3 @@ def get_adidas_sales_df() -> pd.DataFrame:
     """Returns Adidas Sales csv file as pandas DataFrame."""
     raw_df = pd.read_excel(ADIDAS_SALES_FILEPATH, skiprows=4)
     return raw_df.drop(columns="Unnamed: 0")
-
-df = get_adidas_sales_df()
