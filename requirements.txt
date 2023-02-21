@@ -1,4 +1,5 @@
 streamlit==1.16.0
+streamlit-extras==0.2.6
 pandas==1.5.2
 openpyxl==3.0.10
 streamlit-pandas-profiling==0.1.3
